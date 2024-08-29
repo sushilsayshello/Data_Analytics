@@ -66,3 +66,8 @@ hist(df$Sepal.Width,
      main = "Histogram of Sepal Width", 
      xlab = "Sepal Width in cm"
 )
+
+# Sushil ###################
+## Shakya ===============================================
+### Sukai -------------------------------------------
+
