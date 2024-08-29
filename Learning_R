@@ -19,3 +19,20 @@ n1
 typeof(n1)
 
 c1 <- "c"
+c1
+typeof(c1)
+
+c2 <- "String of text"
+c2
+typeof(c2)
+l1 <- TRUE
+l1
+typeof(l1)
+
+v1 <- c(1, 2, 3, 4, 5)
+v1
+is.vector(v1)
+
+m1 <- matrix(c(T, T, F, F, T, F), nrow = 2)
+m1
+
