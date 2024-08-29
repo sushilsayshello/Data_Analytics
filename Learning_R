@@ -47,3 +47,22 @@ a1
 
 
 # Shakya #########################
+
+
+
+# Sukai ###################################
+
+?iris
+df <- iris
+head(df)
+
+hist(df$Sepal.Width, col = "#CD0000", 
+     border = NA, 
+     main = "Histogram of Sepal Width", 
+     xlab = "Sepal Width in cm"
+     )
+
+hist(df$Sepal.Width,
+     main = "Histogram of Sepal Width", 
+     xlab = "Sepal Width in cm"
+)
