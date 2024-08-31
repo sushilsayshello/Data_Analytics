@@ -21,4 +21,8 @@ p1 <-ggplot(HoldingBreath,
                 y=Time,
                 color=Exercise))
 p1 + geom_point() + geom_smooth()
-
+p2 <-ggplot(HoldingBreath,
+            aes(x=Gender,
+                y=Time))
+p2 +geom_boxplot()
+p2 +geom_boxplot() +geom_point()
