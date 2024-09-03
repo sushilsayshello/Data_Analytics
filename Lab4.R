@@ -30,4 +30,31 @@ if (exists("ages")) {
   stop("Failed to load the dataset. Check the file path and name.")
 }
 
+# Create a density plot facetted by smokers
+ggplot(ages, aes(x = AgeAtDeath, fill = factor(Smokes))) +
+  geom_density() +
+  facet_grid(Smokes ~ .)
 
+# Summary statistics for AgeAtDeath
+summary(ages$AgeAtDeath)
+
+# Calculate MSE with h = 73
+guess <- 73
+mse <- with(ages, mean((AgeAtDeath - guess)^2))
+print(mse) # Should output 32.991
+
+# Explore different guesses and their associated MSE
+guess.accuracy <- data.frame()
+
+for (guess in seq(63, 83, by = 1)) {
+  prediction.error <- with(ages,
+                           mean((AgeAtDeath - guess) ^ 2))
+  guess.accuracy <- rbind(guess.accuracy,
+                          data.frame(Guess = guess,
+                                     Error = prediction.error))
+}
+
+# Plot the relationship between guesses and MSE
+ggplot(guess.accuracy, aes(x = Guess, y = Error)) +
+  geom_point() +
+  geom_line()
