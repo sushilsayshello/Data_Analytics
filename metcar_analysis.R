@@ -11,5 +11,9 @@ boxplot(mpg ~ cyl, data = mtcars,
         main = "MPG by Number of Cylinders", 
         xlab = "Number of Cylinders", 
         ylab = "Miles Per Gallon")
+hist(mtcars$mpg, breaks = 10, col = "skyblue", 
+     main = "Histogram of MPG", 
+     xlab = "Miles Per Gallon")
+model <- lm(mpg ~ hp, data = mtcars)
 
 
