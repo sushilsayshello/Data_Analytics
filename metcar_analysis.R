@@ -15,5 +15,9 @@ hist(mtcars$mpg, breaks = 10, col = "skyblue",
      main = "Histogram of MPG", 
      xlab = "Miles Per Gallon")
 model <- lm(mpg ~ hp, data = mtcars)
-
+summary(model)
+plot(mtcars$hp, mtcars$mpg,
+     xlab = "Horsepower", ylab = "Miles Per Gallon",
+     main = "MPG vs Horsepower with Regression Line")
+abline(model, col = "red")
 
