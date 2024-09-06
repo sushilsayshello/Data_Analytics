@@ -1,2 +1,8 @@
 install.packages("palmerpenguins")
 library(palmerpenguins)
+data(penguins)
+dim(penguins)
+str(penguins)
+colSums(is.na(penguins))
+penguins <- na.omit(penguins)
+library(ggplot2)
