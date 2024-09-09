@@ -52,4 +52,16 @@ model = train(x=xTrain,
               trControl=trainControl(method='cv', number=10))
 print(model)
 
+# Predict class labels on the test set
+pred_y_test <- predict(model, xTest)
+
+# Evaluate the model with a confusion matrix
+table(pred_y_test, yTest)
+prop.table(table(pred_y_test, yTest))
+confusionMatrix(pred_y_test, yTest)
+
+# ================================
+# Logarithmic Feature Exploration
+# ================================
+
 
