@@ -63,5 +63,20 @@ confusionMatrix(pred_y_test, yTest)
 # ================================
 # Logarithmic Feature Exploration
 # ================================
+# Explore capitalAve with and without logarithmic scaling
+plot(train$capitalAve ~ train$type)  # Raw data
+plot(log10(train$capitalAve + 1) ~ train$type)  # Log-scaled data
+
+# ================================
+# Hierarchical Clustering on Spam dataset
+# ================================
+
+# Hierarchical clustering on raw data
+hCluster = hclust(dist(t(train[, 1:57])))
+plot(hCluster)
+
+# Hierarchical clustering on log-transformed data
+hClusterUpdated = hclust(dist(t(log10(train[, 1:55] + 1))))
+plot(hClusterUpdated)
 
 
